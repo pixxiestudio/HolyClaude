@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "defaultMode": "allowEdits"
+  },
+  "env": {
+    "DISABLE_AUTOUPDATER": "1"
+  },
+  "model": "sonnet",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/local/bin/notify.sh stop"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/local/bin/notify.sh error"
+          }
+        ]
+      }
+    ]
+  }
+}
